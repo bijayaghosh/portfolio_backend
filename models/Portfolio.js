@@ -1,7 +1,22 @@
 const mongoose = require('mongoose');
 
 const portfolioSchema = new mongoose.Schema({
-  // Define your schema fields here
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
 });
 
 const Portfolio = mongoose.model('Portfolio', portfolioSchema);

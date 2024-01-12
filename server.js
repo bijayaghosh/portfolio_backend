@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the cors middleware
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,6 +12,10 @@ mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifie
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Routes
 const portfolioRoutes = require('./routes/portfolioRoutes');
